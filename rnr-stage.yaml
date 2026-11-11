@@ -1,0 +1,16 @@
+# CI configuration. Set `stage` (fetch -> decode -> execute -> writeback -> integration).
+yaml_version: 1
+stage: integration
+
+modules:
+  if_stage:           {source_files: [IF_Stage/if_stage.sv]}
+  decoder:            {source_files: [Decoder/decoder.sv]}
+  imm_generator:      {source_files: [Immediate_Generator/imm_generator.sv]}
+  register_file:      {source_files: [Register_File/register_file.sv]}
+  main_control:       {source_files: [Main_Control/main_control.sv]}
+  id_stage:           {source_files: [ID_Stage/id_stage.sv]}
+  alu:                {source_files: [ALU/alu.sv]}
+  alu_control:        {source_files: [ALU_Control/alu_control.sv]}
+  ex_stage:           {source_files: [EX_Stage/ex_stage.sv]}
+  wb_stage:           {source_files: [WB_Stage/wb_stage.sv]}
+  single_cycle_riscv: {source_files: [Single_Cycle_RISCV/single_cycle_riscv.sv]}
